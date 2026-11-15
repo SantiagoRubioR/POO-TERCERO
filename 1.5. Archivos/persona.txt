@@ -1,0 +1,18 @@
+nombre:SANTIAGO
+edad:24
+correo:nassti@gmail.com
+persona2{'nombre': 'DARWIN', 'edad': 24, 'correo': 'nassti@gmail.com'}nombre,DARWIN
+edad,24
+correo,nassti@gmail.com
+nombre,FRIXON
+edad,1
+correo,FRIKSON@gmail.com
+nombre FRIXON
+edad 1
+correo FRIKSON@gmail.com
+nombre :FRIXON
+edad :1
+correo :FRIKSON@gmail.com
+nombre : DARWIN
+edad : 24
+correo : nassti@gmail.com

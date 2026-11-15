@@ -1,0 +1,4 @@
+Hola, estudiantes de POO II
+Este archivo lo creó Python
+Periodo academico 2026-2PCuenca - Ecuador
+Línea agregada después

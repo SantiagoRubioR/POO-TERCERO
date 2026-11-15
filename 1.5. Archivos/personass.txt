@@ -1,0 +1,25 @@
+  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+ persona:  1
+nombre:SANTIAGO
+edad:24
+correo:nassti@gmail.com
+  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+ persona:  2
+nombre:JUAN
+edad:21
+correo:JUAN@gmail.com
+  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+ persona:  3
+nombre:DIEGO
+edad:22
+correo:DIDI@gmail.com
+  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+ persona:  4
+nombre:SAMUEL
+edad:25
+correo:SAMU@gmail.com
+  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  -  
+ persona:  5
+nombre:NOE
+edad:28
+correo:NOEE@gmail.com
