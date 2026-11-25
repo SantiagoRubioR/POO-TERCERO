@@ -1,5 +1,11 @@
 class Medicamento:
     def __init__(self, codigo, nombre, precio, cajas):
+        if not nombre.strip():
+            raise ValueError("Error: el nombre no puede estar vacío.")
+        if precio <= 0:
+            raise ValueError("Error: el precio debe ser mayor que cero.")
+        if cajas < 0:
+            raise ValueError("Error: las cajas no pueden ser negativas.")
         self.codigo = codigo
         self.nombre = nombre
         self.precio = precio
@@ -7,11 +13,11 @@ class Medicamento:
 
     def vender(self, cantidad):
         if cantidad <= 0:
-            return False, "Error: la cantidad debe ser mayor que cero."
+            raise ValueError("Error: la cantidad debe ser mayor que cero.")
         if cantidad > self.cajas:
-            return False, f"Error: Hay {self.cajas} cajas disponibles."
+            raise ValueError(f"Error: solo hay {self.cajas} cajas disponibles.")
         self.cajas -= cantidad
-        return True, f"Quedan {self.cajas} cajas disponibles."
+        return self.cajas
 
     def __str__(self):
         return f"{self.codigo:<6} | {self.nombre:<18} | ${self.precio:<7.2f} | {self.cajas}"
@@ -19,14 +25,18 @@ class Medicamento:
 
 class ListaMedicamentos:
     def __init__(self):
+        self.medicamentos = []
+        self.cargar_medicamentos()
+
+    def cargar_medicamentos(self):
         self.medicamentos = [
-            ListaMedicamentos(1, "Paracetamol", 2.50, 30),
-            ListaMedicamentos(2, "Ibuprofeno", 3.20, 20)
+            Medicamento(1, "Paracetamol", 2.50, 30),
+            Medicamento(2, "Ibuprofeno", 3.20, 20)
         ]
 
     def registrar(self, nombre, precio, cajas):
         codigo = len(self.medicamentos) + 1
-        nuevo = ListaMedicamentos(codigo, nombre, precio, cajas)
+        nuevo = Medicamento(codigo, nombre, precio, cajas)
         self.medicamentos.append(nuevo)
         return codigo
 
@@ -38,3 +48,8 @@ class ListaMedicamentos:
             if m.codigo == codigo:
                 return m
         return None
+    def vender(self, codigo, cantidad):
+        medicamento = self.buscar_por_codigo(codigo)
+        if medicamento is None:
+            raise ValueError("Error: no existe un medicamento con ese código.")
+        return medicamento.vender(cantidad)
